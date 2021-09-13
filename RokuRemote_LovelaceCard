@@ -1,0 +1,247 @@
+type: grid
+cards:
+  - type: custom:button-card
+    entity: remote.roku_tv
+    size: 50px
+    color: auto
+    color_type: card
+    tap_action:
+      action: toggle
+    name: Living Room TV
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: home
+    card:
+      type: media-control
+      entity: media_player.roku_tv
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: home
+    card:
+      name: Living Room Remote
+      type: custom:roku-card
+      entity: remote.roku_tv
+      tv: true
+      apps:
+        - image: /local/icon/disney.png
+          app: Disney+
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: Disney Plus
+              entity_id: media_player.roku_tv
+        - image: /local/icon/upfaith.png
+          app: Up Faith & Family
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: UP Faith & Family
+              entity_id: media_player.roku_tv
+      volume_up:
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_up
+      volume_down:
+        double_tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_down
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: paused
+    card:
+      type: media-control
+      entity: media_player.roku_tv
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: paused
+    card:
+      name: Living Room Remote
+      type: custom:roku-card
+      entity: remote.roku_tv
+      tv: true
+      apps:
+        - image: /local/icon/disney.png
+          app: Disney+
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: Disney Plus
+              entity_id: media_player.roku_tv
+        - image: /local/icon/upfaith.png
+          app: Up Faith & Family
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: UP Faith & Family
+              entity_id: media_player.roku_tv
+      volume_up:
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_up
+      volume_down:
+        double_tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_down
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: playing
+    card:
+      type: media-control
+      entity: media_player.roku_tv
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: playing
+    card:
+      name: Living Room Remote
+      type: custom:roku-card
+      entity: remote.roku_tv
+      tv: true
+      apps:
+        - image: /local/icon/disney.png
+          app: Disney+
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: Disney Plus
+              entity_id: media_player.roku_tv
+        - image: /local/icon/upfaith.png
+          app: Up Faith & Family
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: UP Faith & Family
+              entity_id: media_player.roku_tv
+      volume_up:
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_up
+      volume_down:
+        double_tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_down
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: 'on'
+    card:
+      type: media-control
+      entity: media_player.roku_tv
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: 'on'
+    card:
+      name: Living Room Remote
+      type: custom:roku-card
+      entity: remote.roku_tv
+      tv: true
+      apps:
+        - image: /local/icon/disney.png
+          app: Disney+
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: Disney Plus
+              entity_id: media_player.roku_tv
+        - image: /local/icon/upfaith.png
+          app: Up Faith & Family
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: UP Faith & Family
+              entity_id: media_player.roku_tv
+      volume_up:
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_up
+      volume_down:
+        double_tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_down
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: idle
+    card:
+      type: media-control
+      entity: media_player.roku_tv
+  - type: conditional
+    conditions:
+      - entity: media_player.roku_tv
+        state: idle
+    card:
+      name: Living Room Remote
+      type: custom:roku-card
+      entity: remote.roku_tv
+      tv: true
+      apps:
+        - image: /local/icon/disney.png
+          app: Disney+
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: Disney Plus
+              entity_id: media_player.roku_tv
+        - image: /local/icon/upfaith.png
+          app: Up Faith & Family
+          tap_action:
+            action: call-service
+            service: media_player.select_source
+            service_data:
+              source: UP Faith & Family
+              entity_id: media_player.roku_tv
+      volume_up:
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_up
+      volume_down:
+        double_tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.roku_tv
+            command: volume_down
+columns: 1
+square: false
