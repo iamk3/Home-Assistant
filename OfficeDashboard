@@ -1,0 +1,309 @@
+title: Office
+views:
+  - path: default_view
+    title: Home
+    cards:
+      - type: grid
+        cards:
+          - type: light
+            entity: light.office_table_lamp
+            icon: mdi:lamp
+            hold_action:
+              action: more-info
+            name: Table Lamp
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.sonoff_100004719b
+            icon: mdi:floor-lamp
+            name: Floor Lamp
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.sonoff_10003ef1d5
+            icon: mdi:candle
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.water_feature
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.back_porch_light
+            icon: mdi:dome-light
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.office_light
+            icon: mdi:light-recessed
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.office_ac
+        square: false
+      - type: button
+        tap_action:
+          action: toggle
+        show_state: true
+        icon_height: 150px
+        entity: lock.back_door
+      - type: entities
+        entities:
+          - entity: binary_sensor.gun_closet
+          - entity: >-
+              binary_sensor.gun_closet_home_security_tampering_product_cover_removed
+          - entity: binary_sensor.gun_closet_low_battery_level
+          - entity: sensor.office_table_lamp_smartenergy_metering
+            name: Table Lamp smartenergy_metering
+          - entity: binary_sensor.smartthings_button_ias_zone
+          - entity: sensor.smartthings_button_temperature
+          - entity: sensor.lumi_lumi_weather_bf814702_temperature
+          - entity: sensor.lumi_lumi_weather_bf814702_humidity
+          - entity: sensor.lumi_lumi_weather_bf814702_pressure
+        title: Office
+        show_header_toggle: false
+      - type: media-control
+        entity: media_player.k3cast
+      - type: media-control
+        entity: media_player.office_speaker
+      - type: media-control
+        entity: media_player.office_fire_stick
+      - type: media-control
+        entity: media_player.office
+  - icon: mdi:bitcoin
+    badges: []
+    cards:
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.bat
+        name: Basic Attention Token (BAT)
+        line_color: '#735119'
+        line_width: 2
+        hours_to_show: 8
+        decimals: 2
+        points_per_hour: 10
+        animate: true
+        icon: mdi:triangle-outline
+        show:
+          labels: false
+        color_thresholds:
+          - value: 0.08
+            color: '#008f39'
+          - value: 0.1
+            color: '#ffff00'
+          - value: 0.2
+            color: '#ff0000'
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.shiba_inu
+        name: Shiba Inu
+        line_color: '#735119'
+        line_width: 2
+        hours_to_show: 8
+        decimals: 8
+        points_per_hour: 10
+        animate: true
+        icon: mdi:cash-multiple
+        show:
+          labels: false
+        color_thresholds:
+          - value: 0.08
+            color: '#008f39'
+          - value: 0.1
+            color: '#ffff00'
+          - value: 0.2
+            color: '#ff0000'
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.dogecoin
+        name: Dogecoin
+        line_color: '#735119'
+        line_width: 2
+        hours_to_show: 8
+        decimals: 8
+        points_per_hour: 10
+        animate: true
+        icon: mdi:dog
+        show:
+          labels: false
+        color_thresholds:
+          - value: 0.08
+            color: '#008f39'
+          - value: 0.1
+            color: '#ffff00'
+          - value: 0.2
+            color: '#ff0000'
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.bitcoin
+        name: Bitcoin
+        line_color: '#735119'
+        line_width: 2
+        hours_to_show: 8
+        decimals: 2
+        points_per_hour: 10
+        animate: true
+        icon: mdi:bitcoin
+        show:
+          labels: false
+        color_thresholds:
+          - value: 0.08
+            color: '#008f39'
+          - value: 0.1
+            color: '#ffff00'
+          - value: 0.2
+            color: '#ff0000'
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.ethereum
+        name: Ethereum
+        line_color: '#735119'
+        line_width: 2
+        hours_to_show: 8
+        decimals: 2
+        points_per_hour: 10
+        animate: true
+        icon: mdi:ethereum
+        show:
+          labels: false
+        color_thresholds:
+          - value: 0.08
+            color: '#008f39'
+          - value: 0.1
+            color: '#ffff00'
+          - value: 0.2
+            color: '#ff0000'
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.loopring
+        name: Loopring (LRC)
+        line_color: '#735119'
+        line_width: 2
+        hours_to_show: 8
+        decimals: 2
+        points_per_hour: 10
+        animate: true
+        icon: mdi:cash-multiple
+        show:
+          labels: false
+        color_thresholds:
+          - value: 0.08
+            color: '#008f39'
+          - value: 0.1
+            color: '#ffff00'
+          - value: 0.2
+            color: '#ff0000'
+      - type: grid
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.dogecoin
+            name: Dogecoin
+            line_color: '#735119'
+            line_width: 2
+            hours_to_show: 8
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: mdi:dog
+            show:
+              labels: false
+            color_thresholds:
+              - value: 0.08
+                color: '#008f39'
+              - value: 0.1
+                color: '#ffff00'
+              - value: 0.2
+                color: '#ff0000'
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.shiba_inu
+            name: Shiba Inu
+            line_color: '#735119'
+            line_width: 2
+            hours_to_show: 8
+            decimals: 8
+            points_per_hour: 10
+            animate: true
+            icon: mdi:cash-multiple
+            show:
+              labels: false
+            color_thresholds:
+              - value: 0.08
+                color: '#008f39'
+              - value: 0.1
+                color: '#ffff00'
+              - value: 0.2
+                color: '#ff0000'
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.bitcoin
+            name: Bitcoin
+            line_color: '#735119'
+            line_width: 2
+            hours_to_show: 8
+            decimals: 2
+            points_per_hour: 10
+            animate: true
+            icon: mdi:bitcoin
+            show:
+              labels: false
+            color_thresholds:
+              - value: 0.08
+                color: '#008f39'
+              - value: 0.1
+                color: '#ffff00'
+              - value: 0.2
+                color: '#ff0000'
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.ethereum
+            name: Ethereum
+            line_color: '#735119'
+            line_width: 2
+            hours_to_show: 8
+            decimals: 2
+            points_per_hour: 10
+            animate: true
+            icon: mdi:ethereum
+            show:
+              labels: false
+            color_thresholds:
+              - value: 0.08
+                color: '#008f39'
+              - value: 0.1
+                color: '#ffff00'
+              - value: 0.2
+                color: '#ff0000'
+        columns: 2
+  - icon: mdi:package-variant
+    badges: []
+    cards:
+      - type: custom:mail-and-packages-card
+        name: Mail Summary
+        updated: sensor.mail_updated
+        details: true
+        image: false
+        deliveries_message: camera.mail_amazon_delivery_camerasen
+        amazon_packages: sensor.mail_amazon_packages
+        usps_mail: camera.mail_usps_camera
+        usps_packages: sensor.mail_usps_packages
+        packages_delivered: sensor.mail_amazon_packages_delivered
+        packages_in_transit: sensor.mail_
+        fedex_packages: sensor.mail_fedex_packages
+        ups_packages: sensor.mail_ups_packages
+        gif_sensor: gif
+        camera_entity: camera.mail_amazon_delivery_camera
+      - type: custom:mail-and-packages-card
+        name: USPS Informed Delivery
+        details: true
+        image: false
+        amazon_packages: sensor.mail_amazon_packages
+        gif_sensor: gif
+        updated: sensor.mail_updated
+        packages_in_transit: sensor.mail_packages_in_transit
+        packages_delivered: sensor.mail_amazon_packages_delivered
+        deliveries_message: camera.mail_amazon_delivery_camera
+        usps_mail: camera.mail_usps_camera
+        camera: true
+        camera_entity: camera.mail_usps_camera
