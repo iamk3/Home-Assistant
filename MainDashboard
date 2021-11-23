@@ -1,0 +1,351 @@
+views:
+  - title: ''
+    path: lr-lights
+    icon: mdi:sofa
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.christmas_console
+            show_state: false
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.christmas_outdoor_1
+            show_state: false
+            show_name: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.christmas_outdoor_2
+            show_state: false
+        square: false
+      - type: grid
+        cards:
+          - type: light
+            entity: light.lamps
+            icon: mdi:lamps
+          - type: light
+            entity: light.living_light_in_wall_dimmer_switch
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.front_porch_light
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.living_fan
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.carport_light
+            icon: mdi:wall-sconce-round
+        square: false
+        columns: 2
+      - type: grid
+        cards:
+          - type: custom:button-card
+            tap_action:
+              action: toggle
+            color_type: card
+            entity: lock.front_door
+            state:
+              - value: unlocked
+                color: red
+                icon: mdi:alert
+                styles:
+                  card:
+                    - animation: blink 2s ease infinite
+              - operator: default
+                color: green
+                icon: mdi:shield-check
+          - type: custom:button-card
+            tap_action:
+              action: toggle
+            color_type: card
+            entity: lock.garage_door
+            state:
+              - value: unlocked
+                color: red
+                icon: mdi:alert
+                styles:
+                  card:
+                    - animation: blink 2s ease infinite
+              - operator: default
+                color: green
+                icon: mdi:shield-check
+          - type: custom:button-card
+            tap_action:
+              action: toggle
+            color_type: card
+            entity: lock.back_door
+            state:
+              - value: unlocked
+                color: red
+                icon: mdi:alert
+                styles:
+                  card:
+                    - animation: blink 2s ease infinite
+              - operator: default
+                color: green
+                icon: mdi:shield-check
+        columns: 2
+        square: false
+      - type: thermostat
+        entity: climate.my_ecobee
+        name: Ecobee
+  - title: ''
+    icon: mdi:remote-tv
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: custom:button-card
+            entity: remote.roku_tv
+            size: 50px
+            color: auto
+            color_type: card
+            tap_action:
+              action: toggle
+            name: Living Room TV
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: home
+            card:
+              type: media-control
+              entity: media_player.roku_tv
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: home
+            card:
+              name: Living Room Remote
+              type: custom:roku-card
+              entity: remote.roku_tv
+              tv: true
+              apps:
+                - image: /local/icon/disney.png
+                  app: Disney+
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: Disney Plus
+                      entity_id: media_player.roku_tv
+                - image: /local/icon/upfaith.png
+                  app: Up Faith & Family
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: UP Faith & Family
+                      entity_id: media_player.roku_tv
+              volume_up:
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_up
+              volume_down:
+                double_tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_down
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: paused
+            card:
+              type: media-control
+              entity: media_player.roku_tv
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: paused
+            card:
+              name: Living Room Remote
+              type: custom:roku-card
+              entity: remote.roku_tv
+              tv: true
+              apps:
+                - image: /local/icon/disney.png
+                  app: Disney+
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: Disney Plus
+                      entity_id: media_player.roku_tv
+                - image: /local/icon/upfaith.png
+                  app: Up Faith & Family
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: UP Faith & Family
+                      entity_id: media_player.roku_tv
+              volume_up:
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_up
+              volume_down:
+                double_tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_down
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: playing
+            card:
+              type: media-control
+              entity: media_player.roku_tv
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: playing
+            card:
+              name: Living Room Remote
+              type: custom:roku-card
+              entity: remote.roku_tv
+              tv: true
+              apps:
+                - image: /local/icon/disney.png
+                  app: Disney+
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: Disney Plus
+                      entity_id: media_player.roku_tv
+                - image: /local/icon/upfaith.png
+                  app: Up Faith & Family
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: UP Faith & Family
+                      entity_id: media_player.roku_tv
+              volume_up:
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_up
+              volume_down:
+                double_tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_down
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: 'on'
+            card:
+              type: media-control
+              entity: media_player.roku_tv
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: 'on'
+            card:
+              name: Living Room Remote
+              type: custom:roku-card
+              entity: remote.roku_tv
+              tv: true
+              apps:
+                - image: /local/icon/disney.png
+                  app: Disney+
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: Disney Plus
+                      entity_id: media_player.roku_tv
+                - image: /local/icon/upfaith.png
+                  app: Up Faith & Family
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: UP Faith & Family
+                      entity_id: media_player.roku_tv
+              volume_up:
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_up
+              volume_down:
+                double_tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_down
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: idle
+            card:
+              type: media-control
+              entity: media_player.roku_tv
+          - type: conditional
+            conditions:
+              - entity: media_player.roku_tv
+                state: idle
+            card:
+              name: Living Room Remote
+              type: custom:roku-card
+              entity: remote.roku_tv
+              tv: true
+              apps:
+                - image: /local/icon/disney.png
+                  app: Disney+
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: Disney Plus
+                      entity_id: media_player.roku_tv
+                - image: /local/icon/upfaith.png
+                  app: Up Faith & Family
+                  tap_action:
+                    action: call-service
+                    service: media_player.select_source
+                    service_data:
+                      source: UP Faith & Family
+                      entity_id: media_player.roku_tv
+              volume_up:
+                tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_up
+              volume_down:
+                double_tap_action:
+                  action: call-service
+                  service: remote.send_command
+                  service_data:
+                    entity_id: remote.roku_tv
+                    command: volume_down
+        columns: 1
+        square: false
+title: Main Dashboard
