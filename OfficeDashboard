@@ -1,7 +1,9 @@
 title: Office
 views:
   - path: default_view
-    title: Home
+    title: ''
+    icon: mdi:chair-rolling
+    badges: []
     cards:
       - type: grid
         cards:
@@ -29,6 +31,10 @@ views:
           - type: button
             tap_action:
               action: toggle
+            entity: switch.office_ac
+          - type: button
+            tap_action:
+              action: toggle
             entity: switch.back_porch_light
             icon: mdi:dome-light
           - type: button
@@ -39,7 +45,8 @@ views:
           - type: button
             tap_action:
               action: toggle
-            entity: switch.office_ac
+            entity: switch.sonoff_100008e903
+            icon: mdi:hand-saw
         square: false
       - type: button
         tap_action:
